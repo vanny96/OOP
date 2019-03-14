@@ -8,13 +8,6 @@ class Tic_tac_toe
             end
         end
     end
-
-    def display_table
-        @symbols_array.each do |element|
-            print "#{element[0]}|#{element[1]}|#{element[2]}\n"
-        end
-        return
-    end
     
     def new_game
         player = (rand 2) + 1
@@ -32,6 +25,7 @@ class Tic_tac_toe
         end
     end
 
+    private
     def check_game symbol
         
         if @symbols_array[0].all?(symbol) ||
@@ -78,6 +72,12 @@ class Tic_tac_toe
                 puts "Already taken"
             end
         end
+    end
+    def display_table
+        @symbols_array.each do |element|
+            print "#{element[0]}|#{element[1]}|#{element[2]}\n"
+        end
+        return
     end
 end
 
